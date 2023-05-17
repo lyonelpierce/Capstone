@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { IconTrash } from "@tabler/icons-react";
 
 import Switch from "react-switch";
@@ -11,6 +11,7 @@ import Switch from "react-switch";
 const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
+  const router = useRouter();
 
   const [privacy, setPrivacy] = useState(post.privacy);
 
@@ -37,10 +38,18 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
     }
   };
 
+  const handleProfileClick = () => {
+    if (post.userId === session?.user.id) return router.push("/profile");
+    router.push(`/profile/${post.userId._id}?name=${post.userId.username}`);
+  };
+
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+        <div
+          className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+          onClick={handleProfileClick}
+        >
           <Image
             src={post.userId.image}
             alt="user_image"
