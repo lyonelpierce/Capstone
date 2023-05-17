@@ -71,10 +71,26 @@
   }
 }
 
+.core {
+  z-index: 9999;
+  background-color: #fafafa;
+  position: relative;
+  box-shadow: 10px 10px 101px -20px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px 10px 101px -20px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 10px 10px 101px -20px rgba(0, 0, 0, 0.36);
+}
 /* Tailwind Styles */
 
-.app {
+.core {
+  @apply w-full h-16 z-50;
+}
+
+.core-center {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 mt-20;
 }
 
 .black_btn {
@@ -141,7 +157,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg tracking-wide;
+  @apply max-sm:hidden font-satoshi font-semibold text-2xl tracking-wide;
 }
 
 .dropdown {

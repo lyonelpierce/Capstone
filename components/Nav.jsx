@@ -32,7 +32,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text orange_gradient">Tattoo.io</p>
+        <p className="logo_text text-orange-600">Tattoo.io</p>
       </Link>
 
       {/* Desktop Navigation */}
