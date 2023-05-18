@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="h-16 flex w-full bg-gray-100 relative">
+    <div className="mt-auto h-16 flex items-center w-full bg-gray-100">
       <nav className="flex flex-center items-center text-black w-full gap-1">
         <div>
           <span className="font-semibold">
