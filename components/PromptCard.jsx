@@ -105,20 +105,26 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
         {post.tag}
       </p>
       {session?.user.id === post.userId._id && pathName === "/profile" && (
-        <div className="mt-5 flex justify-between border-t border-gray-100 pt-3 align-middle">
-          <Switch
-            onChange={handlePrivacyToggle}
-            checked={privacy}
-            onColor="#34D399" // Customize the colors according to your preference
-            offColor="#EF4444"
-            checkedIcon={false}
-            uncheckedIcon={false}
-            handleDiameter={20}
-          />
-          <p className="cursor-pointer text-red-600">
-            <IconTrash onClick={handleDelete} height={25} />
-          </p>
-        </div>
+        <>
+          <div className="mt-5 flex justify-between border-t border-gray-100 pt-3 items-center h-10">
+            <Switch
+              onChange={handlePrivacyToggle}
+              checked={privacy}
+              onColor="#34D399" // Customize the colors according to your preference
+              offColor="#EF4444"
+              checkedIcon={false}
+              uncheckedIcon={false}
+              handleDiameter={20}
+            />
+            <p className="flex-end cursor-pointer text-white">
+              <IconTrash
+                onClick={handleDelete}
+                height={25}
+                className="bg-red-500 rounded-full h-8 w-8 p-2"
+              />
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
