@@ -32,7 +32,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text text-orange-600">Tattoo.io</p>
+        <p className="logo_text text-orange-500">Tattoo.io</p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -94,11 +94,11 @@ const Nav = () => {
                   My Profile
                 </Link>
                 <Link
-                  href="/create-prompt"
+                  href="/create-tattoo"
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
-                  New Tattoo
+                  Create Tattoo
                 </Link>
                 <button
                   type="button"

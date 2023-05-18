@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { IconTrash } from "@tabler/icons-react";
+import toast, { Toaster } from "react-hot-toast";
 
 import Switch from "react-switch";
 
@@ -13,6 +14,14 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const pathName = usePathname();
   const router = useRouter();
 
+  const notify = () =>
+    toast.success("Copied", {
+      style: {
+        background: "green",
+        color: "white",
+      },
+    });
+
   const [privacy, setPrivacy] = useState(post.privacy);
 
   const [copied, setCopied] = useState("");
@@ -20,11 +29,11 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
+    notify();
     setTimeout(() => setCopied(""), 3000);
   };
 
   const handlePrivacyToggle = async () => {
-    console.log(post);
     try {
       const response = await fetch(`/api/prompt/${post._id.toString()}`, {
         method: "PATCH",
@@ -80,6 +89,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
           />
         </div>
       </div>
+
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
       <Image
         src={post.url}
