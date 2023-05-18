@@ -74,8 +74,8 @@
 .core {
   z-index: 9999;
   background-color: rgba(250, 250, 250, 0.9); /* Blurry color with opacity */
+  height: 3.9rem;
   position: -webkit-sticky;
-
   position: sticky;
   top: 0;
   box-shadow: 10px 10px 101px -20px rgba(0, 0, 0, 0.36);
@@ -88,7 +88,7 @@
 }
 
 .core {
-  @apply w-full h-16 z-50;
+  @apply w-full z-50;
 }
 
 .core-center {
