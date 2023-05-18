@@ -71,7 +71,7 @@ const Feed = () => {
       <form className="relative w-full flex-center">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search previous generations..."
           value={searchText}
           onChange={handleSearchChange}
           required

@@ -7,8 +7,7 @@ export const GET = async (request, { params }) => {
 
     const prompts = await Prompt.find({ userId: params.id })
       .sort({ _id: -1 })
-      .populate("userId")
-      .limit(6);
+      .populate("userId");
     return new Response(JSON.stringify(prompts), { status: 200 });
   } catch (error) {
     return new Response("Failed to fetch tattoos", { status: 500 });
