@@ -6,7 +6,6 @@ const Footer = () => {
       <nav className="flex flex-center items-center text-black w-full gap-1">
         <div>
           <span className="font-semibold">
-            &copy; Copyright {currentYear} -{" "}
             <a
               href="https://lyonelpierce.com"
               target="_blank"
@@ -16,6 +15,7 @@ const Footer = () => {
             </a>
           </span>
         </div>
+        <span className="font-semibold">- {currentYear}</span>
       </nav>
     </div>
   );
