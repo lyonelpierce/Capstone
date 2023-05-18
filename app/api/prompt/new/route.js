@@ -29,7 +29,7 @@ export const POST = async (req, res) => {
 
       let status = "PENDING";
       while (status === "PENDING") {
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
 
         const aiImages = await fetch(
           `https://cloud.leonardo.ai/api/rest/v1/generations/${generationId}`,
