@@ -5,7 +5,7 @@ export const GET = async (request) => {
   try {
     await connectToDB();
 
-    const prompts = await Prompt.find()
+    const prompts = await Prompt.find({ privacy: true })
       .sort({ createdAt: -1 })
       .populate("userId")
       .limit(6);
