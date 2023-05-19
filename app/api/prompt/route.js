@@ -11,6 +11,7 @@ export const GET = async (request) => {
       .limit(6);
     return new Response(JSON.stringify(prompts), { status: 200 });
   } catch (error) {
+    console.log(error);
     return new Response("Failed to fetch tattoos", { status: 500 });
   }
 };
