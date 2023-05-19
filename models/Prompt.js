@@ -25,6 +25,10 @@ const PromptSchema = new Schema({
     type: Boolean,
     required: [true, "Privacy is required"],
   },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const Prompt = models.Prompt || model("Prompt", PromptSchema);

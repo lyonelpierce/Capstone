@@ -6,7 +6,7 @@ export const GET = async (request) => {
     await connectToDB();
 
     const prompts = await Prompt.find({ privacy: true })
-      .sort({ _id: -1 })
+      .sort({ createdAt: -1 })
       .populate("userId")
       .limit(6);
     return new Response(JSON.stringify(prompts), { status: 200 });
