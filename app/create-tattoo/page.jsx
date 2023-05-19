@@ -9,7 +9,7 @@ const CreateTattoo = () => {
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     prompt: "",
-    tag: "",
+    style: "",
   });
 
   const [generationResponse, setGenerationResponse] = useState(null);
@@ -23,7 +23,7 @@ const CreateTattoo = () => {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,
-          tag: post.tag,
+          style: post.style,
         }),
       });
       if (response.ok) {

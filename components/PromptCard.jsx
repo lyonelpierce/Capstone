@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { IconTrash } from "@tabler/icons-react";
-import toast, { Toaster } from "react-hot-toast";
 
 import Switch from "react-switch";
 
@@ -13,14 +12,6 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
-
-  const notify = () =>
-    toast.success("Copied", {
-      style: {
-        background: "green",
-        color: "white",
-      },
-    });
 
   const [privacy, setPrivacy] = useState(post.privacy);
 
@@ -89,7 +80,6 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
           />
         </div>
       </div>
-
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
       <Image
         src={post.url}
@@ -99,10 +89,11 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
         className="rounded-lg"
       />
       <p
-        className="mt-3 font-inter text-sm blue_gradient cursor-pointer"
-        onClick={() => handleTagClick && handleTagClick(post.tag)}
+        className="mt-3 font-inter text-sm"
+        onClick={() => handleTagClick && handleTagClick(post.style)}
       >
-        {post.tag}
+        <span className="font-semibold orange_gradient">Style: </span>
+        <span className="blue_gradient cursor-pointer">{post.style}</span>
       </p>
       {session?.user.id === post.userId._id && pathName === "/profile" && (
         <>
@@ -110,7 +101,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
             <Switch
               onChange={handlePrivacyToggle}
               checked={privacy}
-              onColor="#34D399" // Customize the colors according to your preference
+              onColor="#34D399"
               offColor="#EF4444"
               checkedIcon={false}
               uncheckedIcon={false}

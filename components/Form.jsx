@@ -14,8 +14,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       <h1 className="head_text text-center">
         <span className="orange_gradient">{type} Tattoo</span>
         <p className="desc text-center max-w-md">
-          Create and share amazing tattoos with the world, and let your
-          imagination run wild with our AI-powered platform.
+          Let your imagination run wild. Create and share your amazing prompts
+          and AI tattoos with the world.
         </p>
 
         {session !== null && pathName === "/create-tattoo" ? (
@@ -25,7 +25,37 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           >
             <label>
               <span className="font-satoshi font-semibold text-base text-gray-700">
-                Your AI Prompt
+                Style
+              </span>
+              <select
+                value={post.style}
+                onChange={(e) => setPost({ ...post, style: e.target.value })}
+                type="text"
+                required
+                className="form_input"
+              >
+                <option disabled value="">
+                  Select a style
+                </option>
+                <option value="Watercolor">Watercolor</option>
+                <option value="Minimalist">Minimalist</option>
+                <option value="Geometric">Geometric</option>
+                <option value="Traditional">Traditional</option>
+                <option value="Surrealism">Surrealism</option>
+                <option value="Realism">Realism</option>
+                <option value="Anime">Anime</option>
+                <option value="BlackAndGrey">Black and Grey</option>
+                <option value="NewSchool">New School</option>
+                <option value="Dotwork">Dotwork</option>
+                <option value="Tribal">Tribal</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Sketch">Sketch</option>
+              </select>
+            </label>
+
+            <label>
+              <span className="font-satoshi font-semibold text-base text-gray-700">
+                Your Idea
               </span>
 
               <textarea
@@ -34,23 +64,6 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                 placeholder="Write your prompt here..."
                 required
                 className="form_textarea"
-              />
-            </label>
-
-            <label>
-              <span className="font-satoshi font-semibold text-base text-gray-700">
-                Tags{" "}
-                <span className="font-normal">
-                  (#birds, #tree, #watercolor, etc.)
-                </span>
-              </span>
-              <input
-                value={post.tag}
-                onChange={(e) => setPost({ ...post, tag: e.target.value })}
-                type="text"
-                placeholder="#tag"
-                required
-                className="form_input"
               />
             </label>
 

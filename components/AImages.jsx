@@ -33,13 +33,13 @@ const AImages = ({ generationResponse }) => {
   // Handle Save
   const handleSaveImg = async (imageObj, privacy) => {
     try {
-      const { prompt, tag } = generationResponse;
+      const { prompt, style } = generationResponse;
       const existingPrompt = await fetch("/api/prompt/save", {
         method: "POST",
         body: JSON.stringify({
           userId: session?.user.id,
           id: imageObj.id,
-          tag,
+          style,
           prompt,
           url: imageObj.url,
           privacy,
