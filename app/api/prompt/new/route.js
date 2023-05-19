@@ -12,7 +12,7 @@ export const POST = async (req, res) => {
     },
     Geometric: {
       modelId: "b820ea11-02bf-4652-97ae-9ac0cc00593d",
-      defaultPrompt: "geometric tattoo style",
+      defaultPrompt: "line art, geometric tattoo style",
     },
     Traditional: {
       modelId: "b455e572-6d9b-42e2-82f9-e80813d1c1ba",

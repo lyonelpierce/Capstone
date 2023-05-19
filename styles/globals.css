@@ -97,7 +97,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-orange-500 bg-orange-500 py-1.5 px-5 text-white transition-all hover:border-orange-500 hover:bg-white hover:text-orange-500 text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-orange-600 bg-orange-600 py-1.5 px-5 text-white transition-all hover:border-orange-600 hover:bg-white hover:text-orange-600 text-center text-sm font-inter flex items-center justify-center;
 }
 
 .outline_btn {
@@ -129,7 +129,7 @@
 }
 
 .search_input {
-  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-l-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {

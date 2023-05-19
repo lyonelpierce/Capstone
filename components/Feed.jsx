@@ -66,6 +66,11 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  const clearSearch = () => {
+    setSearchText("");
+    setSearchedResults([]);
+  };
+
   return (
     <section className="feed">
       <form className="relative w-full flex-center">
@@ -77,16 +82,18 @@ const Feed = () => {
           required
           className="search_input peer"
         ></input>
+        <button
+          onClick={() => clearSearch()}
+          className="border border-gray-200 bg-orange-600 text-white rounded-r-lg px-4 pt-2 pb-2 font-semibold"
+        >
+          X
+        </button>
       </form>
       {/* <PromptCardList data={posts} handleSearchChange={() => {}} /> */}
-      {searchText ? (
-        <PromptCardList
-          data={searchedResults}
-          handleTagClick={handleTagClick}
-        />
-      ) : (
-        <PromptCardList data={posts} handleTagClick={handleTagClick} />
-      )}
+      <PromptCardList
+        data={searchText ? searchedResults : posts}
+        handleTagClick={handleTagClick}
+      />
     </section>
   );
 };

@@ -1,5 +1,7 @@
 "use client";
 
+import PhotoAlbum from "react-photo-album";
+
 import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
