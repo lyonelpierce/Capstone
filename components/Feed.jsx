@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { IconX } from "@tabler/icons-react";
 
 import PromptCard from "./PromptCard";
 
@@ -88,7 +89,7 @@ const Feed = () => {
             onClick={() => clearSearch()}
             className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 font-semibold hover:bg-black"
           >
-            X
+            <IconX />
           </button>
         </form>
         {/* <PromptCardList data={posts} handleSearchChange={() => {}} /> */}
