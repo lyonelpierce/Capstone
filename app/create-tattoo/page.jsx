@@ -39,16 +39,14 @@ const CreateTattoo = () => {
 
   return (
     <>
-      <div className="">
-        <Form
-          post={post}
-          setPost={setPost}
-          submitting={submitting}
-          handleSubmit={createPrompt}
-        />
-        <div className="min-h-[100%] mb-10">
-          <AImages generationResponse={generationResponse} />
-        </div>
+      <Form
+        post={post}
+        setPost={setPost}
+        submitting={submitting}
+        handleSubmit={createPrompt}
+      />
+      <div className="min-h-[100%] mb-10">
+        <AImages generationResponse={generationResponse} />
       </div>
     </>
   );

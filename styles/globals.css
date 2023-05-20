@@ -5,47 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
-.main {
-  width: 100vw;
-  min-height: 100vh;
-  position: fixed;
+body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 120px 24px 160px 24px;
-  pointer-events: none;
-}
-
-.main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #ededed 100%);
-  position: absolute;
-  content: "";
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-
-.main:after {
-  content: "";
-  background-image: url("/assets/images/grid.svg");
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  opacity: 0.4;
-  filter: invert(1);
 }
 
 .gradient {
-  height: fit-content;
-  z-index: 3;
+  /* height: auto; */
+  /* z-index: 3; */
   width: 100%;
-  max-width: 640px;
   background-image: radial-gradient(
       at 27% 37%,
       hsla(215, 98%, 61%, 1) 0px,
@@ -58,12 +27,10 @@
     radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
     radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
   position: absolute;
-  content: "";
   width: 100%;
   height: 100%;
   filter: blur(100px) saturate(150%);
-  top: 80px;
-  opacity: 0.15;
+  opacity: 0.16;
 }
 
 @media screen and (max-width: 640px) {
@@ -77,7 +44,6 @@ html {
 }
 
 .core {
-  /* z-index: 9999; */
   background-color: rgba(250, 250, 250, 0.9);
   height: 3.85rem;
   position: -webkit-sticky;
@@ -93,11 +59,13 @@ html {
   box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
   -webkit-box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
   -moz-box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
+  position: static;
+  bottom: 0;
 }
 
 /* Tailwind Styles */
 .core {
-  @apply w-full z-50;
+  @apply w-full z-50 border border-gray-200 bg-white/20 backdrop-blur;
 }
 
 .core-center {

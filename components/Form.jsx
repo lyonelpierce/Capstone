@@ -97,7 +97,7 @@ const Form = ({ post, setPost, submitting, handleSubmit }) => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white min-w-[15%] max-w-[15%] hover:bg-orange-700"
+              className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white md:min-w-[15%] md:max-w-[15%] hover:bg-orange-700"
             >
               {submitting ? formatCounter(counter) : "Create"}
             </button>
