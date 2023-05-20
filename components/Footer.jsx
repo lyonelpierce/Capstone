@@ -2,7 +2,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="mt-auto h-16 flex items-center w-full relative footer">
+    <div className="mt-auto h-16 flex items-center w-full footer relative">
       <nav className="flex flex-center items-center text-black w-full gap-1">
         <div>
           <span className="font-semibold">
