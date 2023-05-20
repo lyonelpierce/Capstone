@@ -77,8 +77,8 @@ html {
 }
 
 .core {
-  z-index: 9999;
-  background-color: rgba(250, 250, 250, 0.9); /* Blurry color with opacity */
+  /* z-index: 9999; */
+  background-color: rgba(250, 250, 250, 0.9);
   height: 3.85rem;
   position: -webkit-sticky;
   position: sticky;
@@ -88,6 +88,12 @@ html {
   -moz-box-shadow: 10px 10px 101px -20px rgba(0, 0, 0, 0.36);
 }
 
+.footer {
+  background-color: rgba(250, 250, 250, 0.1);
+  box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 10px -11px 101px -20px rgba(0, 0, 0, 0.36);
+}
 /* Tailwind Styles */
 .core {
   @apply w-full z-50;
