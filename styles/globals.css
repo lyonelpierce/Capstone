@@ -20,7 +20,7 @@
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #ededed 100%);
   position: absolute;
   content: "";
   z-index: 2;
@@ -149,7 +149,7 @@ html {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-5 xl:columns-3;
 } */
 .prompt_layout {
-  @apply py-8 grid grid-cols-3 gap-5 max-w-7xl;
+  @apply py-8 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl;
 }
 
 /* Feed Component */

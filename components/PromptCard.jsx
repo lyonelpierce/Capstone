@@ -59,7 +59,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
             className="rounded-full object-contain"
           />
           <div className="flex flex-col">
-            <h3 className="font-satoshi font-semibold text-gray-900">
+            <h3 className="font-satoshi font-semibold text-gray-900 hover:text-orange-600">
               {post.userId.username}
             </h3>
           </div>
@@ -91,7 +91,9 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
         onClick={() => handleTagClick && handleTagClick(post.style)}
       >
         <span className="font-semibold text-orange-500">Style: </span>
-        <span className="blue_gradient cursor-pointer">{post.style}</span>
+        <span className="blue_gradient cursor-pointer hover:text-blue-700">
+          {post.style}
+        </span>
       </p>
       {session?.user.id === post.userId._id && pathName === "/profile" && (
         <>
