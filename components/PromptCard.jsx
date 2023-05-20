@@ -22,7 +22,6 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
-    notify();
     setTimeout(() => setCopied(""), 3000);
   };
 
@@ -63,13 +62,10 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
             <h3 className="font-satoshi font-semibold text-gray-900">
               {post.userId.username}
             </h3>
-            <p className="font-inter text-sm text-gray-500">
-              {post.userId.email}
-            </p>
           </div>
         </div>
 
-        <div className="copy_btn hover:bg-amber-200" onClick={handleCopy}>
+        <div className="copy_btn hover:bg-gray-200 p-1" onClick={handleCopy}>
           <Image
             src={
               copied === post.prompt
@@ -77,8 +73,8 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
                 : "/assets/icons/copy.svg"
             }
             alt="Copy Icon"
-            width={12}
-            height={12}
+            width={20}
+            height={20}
           />
         </div>
       </div>
@@ -94,7 +90,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
         className="mt-3 font-inter text-sm"
         onClick={() => handleTagClick && handleTagClick(post.style)}
       >
-        <span className="font-semibold orange_gradient">Style: </span>
+        <span className="font-semibold text-orange-500">Style: </span>
         <span className="blue_gradient cursor-pointer">{post.style}</span>
       </p>
       {session?.user.id === post.userId._id && pathName === "/profile" && (
