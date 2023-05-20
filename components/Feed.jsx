@@ -85,7 +85,7 @@ const Feed = () => {
         <button
           type="button"
           onClick={() => clearSearch()}
-          className="border border-gray-200 bg-orange-600 text-white rounded-r-lg px-4 pt-2 pb-2 font-semibold"
+          className="border border-gray-200 h-12 bg-orange-600 text-white rounded-r-full px-5 pt-2 pb-2 font-semibold"
         >
           X
         </button>

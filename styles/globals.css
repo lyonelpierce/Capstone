@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -71,6 +72,10 @@
   }
 }
 
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
 .core {
   z-index: 9999;
   background-color: rgba(250, 250, 250, 0.9); /* Blurry color with opacity */
@@ -129,7 +134,7 @@
 }
 
 .search_input {
-  @apply block w-full rounded-l-md bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-l-full h-12 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
