@@ -80,12 +80,12 @@ const Feed = () => {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input peer"
+          className="search_input peer border border-gray-200"
         ></input>
         <button
           type="button"
           onClick={() => clearSearch()}
-          className="border border-gray-200 h-12 bg-orange-600 text-white rounded-r-full px-5 pt-2 pb-2 font-semibold"
+          className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 font-semibold hover:bg-black"
         >
           X
         </button>

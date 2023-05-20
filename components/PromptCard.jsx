@@ -69,7 +69,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
           </div>
         </div>
 
-        <div className="copy_btn" onClick={handleCopy}>
+        <div className="copy_btn hover:bg-amber-200" onClick={handleCopy}>
           <Image
             src={
               copied === post.prompt
@@ -113,7 +113,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
               <IconTrash
                 onClick={handleDelete}
                 height={25}
-                className="bg-red-500 rounded-full h-8 w-8 p-2"
+                className="bg-red-500 rounded-full h-8 w-8 p-2 hover:bg-red-400"
               />
             </p>
           </div>

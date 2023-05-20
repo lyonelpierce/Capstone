@@ -87,14 +87,17 @@ const Form = ({ post, setPost, submitting, handleSubmit }) => {
           </label>
 
           <div className="flex-end mx-3 my-3 mb-5 gap-4">
-            <Link href="/" className="text-gray-500 text-sm">
+            <Link
+              href="/"
+              className="text-gray-500 text-sm hover:text-amber-500"
+            >
               Cancel
             </Link>
 
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white min-w-[15%] max-w-[15%]"
+              className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white min-w-[15%] max-w-[15%] hover:bg-orange-500"
             >
               {submitting ? formatCounter(counter) : "Create"}
             </button>

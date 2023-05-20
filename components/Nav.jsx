@@ -50,7 +50,7 @@ const Nav = () => {
                 src={session?.user.image}
                 width={37}
                 height={37}
-                className="rounded-full"
+                className="rounded-full border border-gray-200 hover:scale-110"
                 alt="profile"
               />
             </Link>
