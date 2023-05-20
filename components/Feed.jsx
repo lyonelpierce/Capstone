@@ -72,30 +72,32 @@ const Feed = () => {
   };
 
   return (
-    <section className="feed">
-      <form className="relative w-full flex-center">
-        <input
-          type="text"
-          placeholder="Search previous generations..."
-          value={searchText}
-          onChange={handleSearchChange}
-          required
-          className="search_input peer border border-gray-200"
-        ></input>
-        <button
-          type="button"
-          onClick={() => clearSearch()}
-          className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 font-semibold hover:bg-black"
-        >
-          X
-        </button>
-      </form>
-      {/* <PromptCardList data={posts} handleSearchChange={() => {}} /> */}
+    <>
+      <section className="feed">
+        <form className="relative w-full flex-center">
+          <input
+            type="text"
+            placeholder="Search previous generations..."
+            value={searchText}
+            onChange={handleSearchChange}
+            required
+            className="search_input peer border border-gray-200"
+          ></input>
+          <button
+            type="button"
+            onClick={() => clearSearch()}
+            className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 font-semibold hover:bg-black"
+          >
+            X
+          </button>
+        </form>
+        {/* <PromptCardList data={posts} handleSearchChange={() => {}} /> */}
+      </section>
       <PromptCardList
         data={searchText ? searchedResults : posts}
         handleTagClick={handleTagClick}
       />
-    </section>
+    </>
   );
 };
 
