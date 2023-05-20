@@ -94,23 +94,23 @@ const AImages = ({ generationResponse }) => {
                 height={512}
                 className="rounded-lg"
               />
-              <div className="flex flex-row space-x-3 mt-3 flex-center">
+              <div className="flex space-x-2 mt-2 flex-center">
                 <button
-                  className="bg-primary-orange text-white text-sm font-semibold px-2.5 py-3 rounded-lg flex"
+                  className="bg-primary-orange text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-orange-700"
                   onClick={() => handleSaveImg(imageObj, true)}
                 >
                   <IconEyeCheck width={25} height={20} />
                   Save Public
                 </button>
                 <button
-                  className="bg-orange-400 text-white text-sm font-semibold px-2.5 py-3 rounded-lg flex"
+                  className="bg-yellow-400 text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-yellow-500"
                   onClick={() => handleSaveImg(imageObj, false)}
                 >
                   <IconDeviceFloppy width={25} height={20} />
                   Save
                 </button>
                 <button
-                  className="bg-gray-400 text-white px-2.5 py-3 rounded-full"
+                  className="bg-green-500 text-white px-1.5 py-2 rounded-full hover:bg-green-600"
                   onClick={() => handleDownload(imageObj)}
                 >
                   <IconDownload width={25} height={20} />
