@@ -129,7 +129,7 @@
 }
 
 .search_input {
-  @apply block w-full rounded-l-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-l-md bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -160,7 +160,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-2xl tracking-wide;
+  @apply max-sm:hidden orange_gradient font-satoshi font-semibold text-2xl tracking-wide;
 }
 
 .dropdown {

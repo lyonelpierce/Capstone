@@ -8,7 +8,7 @@ export const POST = async (req, res) => {
     },
     Minimalist: {
       modelId: "b820ea11-02bf-4652-97ae-9ac0cc00593d",
-      defaultPrompt: "minimalist tattoo style",
+      defaultPrompt: "minimalist tattoo style, line art",
     },
     Geometric: {
       modelId: "b820ea11-02bf-4652-97ae-9ac0cc00593d",
@@ -43,8 +43,8 @@ export const POST = async (req, res) => {
       defaultPrompt: "dotwork tattoo style",
     },
     Tribal: {
-      modelId: "b820ea11-02bf-4652-97ae-9ac0cc00593d",
-      defaultPrompt: "tribal tattoo style, black and white",
+      modelId: "d3e5f41d-0c37-4542-a9b7-3ac04ff74cfe",
+      defaultPrompt: "tribal style, tattoo style, black",
     },
     Japanese: {
       modelId: "b820ea11-02bf-4652-97ae-9ac0cc00593d",
