@@ -66,8 +66,9 @@ body {
 
 /* Tailwind Styles */
 .footer {
-  @apply border-y z-50 bg-white/20 backdrop-blur;
+  @apply border-y bg-white/20 backdrop-blur;
 }
+
 .core {
   @apply w-full z-50 border-y border-gray-200 bg-white/20 backdrop-blur;
 }

@@ -9,6 +9,7 @@ export const GET = async (request) => {
       .sort({ createdAt: -1 })
       .populate("userId")
       .limit(6);
+
     return new Response(JSON.stringify(prompts), { status: 200 });
   } catch (error) {
     console.log(error);
