@@ -1,7 +1,11 @@
-import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
 import { useSession } from "next-auth/react";
 
 import Image from "next/image";
+
+import toast, { Toaster } from "react-hot-toast";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
 import {
   IconDownload,
@@ -10,6 +14,21 @@ import {
 } from "@tabler/icons-react";
 
 const AImages = ({ generationResponse }) => {
+  // Image Modal
+  const [openIndex, setOpenIndex] = useState(null);
+  const handleOpen = (index) => setOpenIndex(index);
+  const handleClose = () => setOpenIndex(null);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 600,
+    boxShadow: 24,
+    outline: 0,
+  };
+
   // Notification Message
   const notify = () =>
     toast.success("Tattoo saved successfully", {
@@ -92,8 +111,26 @@ const AImages = ({ generationResponse }) => {
                 alt={`AI Art ${index + 1}`}
                 width={512}
                 height={512}
-                className="rounded-lg"
+                className="rounded-lg image"
+                onClick={() => handleOpen(index)}
               />
+              <Modal
+                open={openIndex === index}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                style={{ backdropFilter: "blur(5px)" }}
+              >
+                <Box sx={style}>
+                  <Image
+                    src={imageObj.url}
+                    height={600}
+                    width={600}
+                    alt={`AI Art ${index + 1}`}
+                    className="rounded-lg"
+                  />
+                </Box>
+              </Modal>
               <div className="flex space-x-2 mt-2 flex-center">
                 <button
                   className="bg-primary-orange text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-orange-700"
@@ -103,7 +140,7 @@ const AImages = ({ generationResponse }) => {
                   Save Public
                 </button>
                 <button
-                  className="bg-yellow-400 text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-yellow-500"
+                  className="bg-amber-500 text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-amber-600"
                   onClick={() => handleSaveImg(imageObj, false)}
                 >
                   <IconDeviceFloppy width={25} height={20} />

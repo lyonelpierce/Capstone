@@ -1,16 +1,32 @@
 "use client";
 
-import PhotoAlbum from "react-photo-album";
-
 import { useState } from "react";
-import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { IconTrash } from "@tabler/icons-react";
 
 import Switch from "react-switch";
 
+import Image from "next/image";
+
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+
 const PromptCard = ({ post, handleTagClick, handleDelete }) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 600,
+    boxShadow: 24,
+    outline: 0,
+  };
+
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -84,8 +100,26 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
         height={512}
         width={512}
         alt={`${post.userId.username} Art`}
-        className="rounded-lg"
+        className="rounded-lg image"
+        onClick={handleOpen}
       />
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        style={{ backdropFilter: "blur(5px)" }}
+      >
+        <Box sx={style}>
+          <Image
+            src={post.url}
+            height={600}
+            width={600}
+            alt={`${post.userId.username} Art`}
+            className="rounded-lg"
+          />
+        </Box>
+      </Modal>
       <p
         className="mt-3 font-inter text-sm"
         onClick={() => handleTagClick && handleTagClick(post.style)}

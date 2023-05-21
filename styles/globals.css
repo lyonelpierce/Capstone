@@ -13,6 +13,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.image {
+  cursor: pointer;
+}
+
 .gradient {
   /* height: auto; */
   /* z-index: 3; */
