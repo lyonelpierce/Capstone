@@ -45,7 +45,7 @@ const CreateTattoo = () => {
         submitting={submitting}
         handleSubmit={createPrompt}
       />
-      <div className="min-h-[100%] mb-10">
+      <div className="mb-10">
         <AImages generationResponse={generationResponse} />
       </div>
     </>
