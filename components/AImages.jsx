@@ -137,7 +137,7 @@ const AImages = ({ generationResponse }) => {
                   onClick={() => handleSaveImg(imageObj, true)}
                 >
                   <IconEyeCheck width={25} height={20} />
-                  Save Public
+                  Publish & Save
                 </button>
                 <button
                   className="bg-amber-500 text-white text-sm font-semibold px-3 py-2 rounded-full flex hover:bg-amber-600"
