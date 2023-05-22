@@ -114,7 +114,7 @@ body {
 }
 
 .search_input {
-  @apply block w-full rounded-l-full h-12 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply block w-full rounded-l-full h-12 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-orange-600 focus:outline-none focus:ring-0;
 }
 
 .copy_btn {

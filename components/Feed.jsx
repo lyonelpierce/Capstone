@@ -87,7 +87,7 @@ const Feed = () => {
           <button
             type="button"
             onClick={() => clearSearch()}
-            className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 font-semibold hover:bg-black"
+            className="h-12 bg-orange-600 text-white rounded-r-full pl-4 pr-5 pt-2 pb-2 shadow-lg hover:bg-orange-700"
           >
             <IconX />
           </button>
