@@ -6,10 +6,9 @@ import { IconUserX } from "@tabler/icons-react";
 
 import PromptCard from "./PromptCard";
 
-const Profile = ({ name, desc, data, handleDelete }) => {
+const Profile = ({ name, desc, data, handleDelete, userId }) => {
   const { data: session } = useSession();
   const router = useRouter();
-  console.log(session?.user.id, data[0]?.userId._id);
 
   const deleteUser = async () => {
     const confirmDelete = await Swal.fire({
@@ -47,7 +46,7 @@ const Profile = ({ name, desc, data, handleDelete }) => {
           <span className="orange_gradient">{name} Profile</span>
         </h1>
         <p className="desc text-left">{desc}</p>
-        {(!data[0] || session?.user.id === data[0]?.userId._id) && (
+        {session?.user.id === userId && session && (
           <div>
             <button
               className="flex items-center gap-2 h-9 bg-red-500 font-semibold mt-6 text-white px-5 rounded-full text-sm hover:bg-red-600"
