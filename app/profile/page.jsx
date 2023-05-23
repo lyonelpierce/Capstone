@@ -27,8 +27,8 @@ const MyProfile = () => {
       text: "Are you sure you want to delete this tattoo?",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#22C55E",
-      cancelButtonColor: "#d33",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#22C55E",
       confirmButtonText: "Yes, delete it!",
       reverseButtons: true,
     }).then((result) => {
@@ -50,6 +50,7 @@ const MyProfile = () => {
       name="My"
       desc="Welcome to your personalized profile page"
       data={posts}
+      userId={session?.user.id}
       handleDelete={handleDelete}
     />
   );
