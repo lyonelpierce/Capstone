@@ -13,7 +13,6 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 
 const PromptCard = ({ post, handleTagClick, handleDelete }) => {
-  console.log(post);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
