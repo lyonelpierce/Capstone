@@ -21,7 +21,7 @@ const MyProfile = () => {
     if (session?.user.id) fetchPosts();
   }, [session?.user.id]);
 
-  console.log(session?.user.id);
+  // console.log(session?.user.id);
 
   const handleDelete = async (post) => {
     const hasConfirmed = Swal.fire({
