@@ -4,8 +4,9 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   const cookie = request.cookies.get("next-auth.session-token")?.value;
   if (cookie) {
-    console.log("hello");
+    return NextResponse.next();
   } else {
+    console.log(cookie);
     return NextResponse.redirect(new URL("/", request.url));
   }
 }
