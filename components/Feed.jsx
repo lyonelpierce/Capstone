@@ -31,8 +31,7 @@ const Feed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
-      const cacheControlHeader = response.headers.get("cache-control");
-      console.log(cacheControlHeader);
+
       const data = await response.json();
       setPosts(data);
     };

@@ -7,8 +7,7 @@ export const GET = async (request) => {
 
     const prompts = await Prompt.find({ privacy: true })
       .sort({ createdAt: -1 })
-      .populate("userId")
-      .limit(6);
+      .populate("userId");
 
     return new Response(JSON.stringify(prompts), { status: 200 });
   } catch (error) {
