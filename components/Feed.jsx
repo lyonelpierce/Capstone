@@ -35,7 +35,6 @@ const Feed = () => {
     };
 
     fetchPosts();
-    console.log(data);
   }, []);
 
   const filterPrompts = (searchtext) => {
