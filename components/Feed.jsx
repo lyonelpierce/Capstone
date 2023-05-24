@@ -27,6 +27,8 @@ const Feed = () => {
 
   const [posts, setPosts] = useState([]);
 
+  const [reloadEffect, setReloadEffect] = useState(Date.now());
+
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
@@ -36,7 +38,11 @@ const Feed = () => {
     };
 
     fetchPosts();
-  }, []);
+  }, [reloadEffect]);
+
+  const reloadPage = () => {
+    setReloadEffect(Date.now());
+  };
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchText, "i");
