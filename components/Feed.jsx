@@ -27,22 +27,16 @@ const Feed = () => {
 
   const [posts, setPosts] = useState([]);
 
-  const [reloadEffect, setReloadEffect] = useState(Date.now());
-
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/prompt");
+      const response = await fetch("/api/prompt", { cache: "no-store" });
       const data = await response.json();
 
       setPosts(data);
     };
 
     fetchPosts();
-  }, [reloadEffect]);
-
-  const reloadPage = () => {
-    setReloadEffect(Date.now());
-  };
+  }, []);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchText, "i");
