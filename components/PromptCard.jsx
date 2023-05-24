@@ -44,7 +44,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
     try {
       const response = await fetch(`/api/prompt/${post._id.toString()}`, {
         method: "PATCH",
-        body: JSON.stringify({ privacy: !privacy }),
+        body: JSON.stringify({ prompt: prompt }),
       });
       if (response.ok) {
         setPrivacy(!privacy);
