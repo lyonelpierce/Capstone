@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export function middleware(request) {
   const cookie = request.cookies.get("next-auth.session-token")?.value;
-  console.log(cookie);
+  console.log(request.cookies);
   if (cookie) {
     return NextResponse.next();
   } else {
