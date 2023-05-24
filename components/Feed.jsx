@@ -72,6 +72,9 @@ const Feed = () => {
     setSearchedResults([]);
   };
 
+  const filteredData = searchText ? searchedResults : posts;
+  const visibleCards = filteredData.filter((post) => post.privacy);
+
   return (
     <>
       <section className="feed">
@@ -94,10 +97,7 @@ const Feed = () => {
         </form>
         {/* <PromptCardList data={posts} handleSearchChange={() => {}} /> */}
       </section>
-      <PromptCardList
-        data={searchText ? searchedResults : posts}
-        handleTagClick={handleTagClick}
-      />
+      <PromptCardList data={visibleCards} handleTagClick={handleTagClick} />
     </>
   );
 };
