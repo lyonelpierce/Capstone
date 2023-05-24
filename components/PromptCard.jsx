@@ -32,7 +32,6 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
   const router = useRouter();
 
   const [privacy, setPrivacy] = useState(post.privacy);
-
   const [copied, setCopied] = useState("");
 
   const handleCopy = () => {
@@ -45,7 +44,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete }) => {
     try {
       const response = await fetch(`/api/prompt/${post._id.toString()}`, {
         method: "PATCH",
-        body: JSON.stringify({ prompt: post.prompt }),
+        body: JSON.stringify({ privacy: !privacy }),
       });
       if (response.ok) {
         setPrivacy(!privacy);

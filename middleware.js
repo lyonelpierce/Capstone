@@ -2,8 +2,9 @@
 import { NextResponse } from "next/server";
 
 export function middleware(request) {
+  // const cookie = request.cookies.get("next-auth.session-token")?.value;
   const cookie = request.cookies.get("__Secure-next-auth.session-token")?.value;
-  console.log(request.cookies);
+  // console.log(request.cookies);
   if (cookie) {
     return NextResponse.next();
   } else {
