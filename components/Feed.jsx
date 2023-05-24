@@ -29,7 +29,7 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/prompt", { next: { revalidate: 0 } });
+      const response = await fetch("/api/prompt");
       const cacheControlHeader = response.headers.get("cache-control");
       console.log(cacheControlHeader);
       const data = await response.json();
