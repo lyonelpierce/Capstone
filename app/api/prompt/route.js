@@ -10,7 +10,13 @@ export const GET = async (request) => {
       .populate("userId");
     console.log(prompts);
 
-    return new Response(JSON.stringify(prompts), { status: 200 });
+    return new Response(JSON.stringify(prompts), {
+      status: 200,
+      headers: {
+        "Cache-Control": "no-cache",
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
     console.log(error);
     return new Response("Failed to fetch tattoos", { status: 500 });
