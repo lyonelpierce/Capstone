@@ -6,7 +6,6 @@ import { IconX } from "@tabler/icons-react";
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
-  console.log(data);
   return (
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
@@ -31,7 +30,7 @@ const Feed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
-
+      console.log(response);
       const data = await response.json();
       setPosts(data);
     };
