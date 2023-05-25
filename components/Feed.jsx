@@ -30,13 +30,13 @@ const Feed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/prompt");
-      console.log(response);
+
       const data = await response.json();
       setPosts(data);
     };
 
     fetchPosts();
-  }, [posts]);
+  }, []);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchText, "i");
