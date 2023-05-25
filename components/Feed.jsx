@@ -37,7 +37,7 @@ const Feed = () => {
     };
 
     fetchPosts();
-  }, []);
+  }, [posts]);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchText, "i");
