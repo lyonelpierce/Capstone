@@ -36,15 +36,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Dependencies
 
 - react
+- react-hot-toast
+- react switch
+- mui image modal
+- tabler icons
+- sweetalert2
+- tailwindcss
+
 - next
 - next-auth
 - mongoose
-- mui image modal
-- tabler icons
-- react switch
-- sweetalert2
-- react-hot-toast
-- tailwindcss
 
 ## Features
 
