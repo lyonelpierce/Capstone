@@ -43,8 +43,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - tabler icons
 - react switch
 - sweetalert2
-- tailwindcss
 - react-hot-toast
+- tailwindcss
 
 ## Features
 
@@ -58,3 +58,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Open other users profile
 - Delete account button to delete the account and all the related user designs
 - Middleware that redirects to home page for not sign in users
+
+## Midleware
+
+Middleware will get a different cookie if you are working in the localhost or in a vercel live deployment. Change between the cookies in middleware.js use "Secure-next-auth" for live server or "next-auth" for localhost.
+
+## Enviroment Variables
+
+An .env file with this variables will be required. Update NEXAUTH_URL and NEXAUTH_URL_INTERNAL with your server url if live version.
+
+- GOOGLE_ID
+- GOOGLE_CLIENT_SECRET
+- MONGODB_URI
+- NEXTAUTH_URL=http://localhost:3000
+- NEXTAUTH_URL_INTERNAL=http://localhost:3000
+- NEXTAUTH_SECRET
+- LEONARDO_SECRET
