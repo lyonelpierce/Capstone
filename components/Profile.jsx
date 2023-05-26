@@ -1,3 +1,4 @@
+import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -32,7 +33,8 @@ const Profile = ({ name, desc, data, handleDelete, userId }) => {
         if (response.ok) {
           console.log("hello");
         }
-        router.push("/");
+        signOut();
+        // router.push("/");
       } catch (error) {
         console.log(error);
       }
@@ -49,7 +51,7 @@ const Profile = ({ name, desc, data, handleDelete, userId }) => {
         {session?.user.id === userId && session && (
           <div>
             <button
-              className="flex items-center gap-2 h-9 bg-red-500 font-semibold mt-6 text-white px-5 rounded-full text-sm hover:bg-red-600"
+              className="flex items-center gap-2 h-11 bg-red-500 font-semibold mt-6 text-white px-5 rounded-full text-sm hover:bg-red-600"
               onClick={deleteUser}
             >
               <IconUserX />
